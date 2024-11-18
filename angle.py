@@ -15,7 +15,7 @@ def getnReg(reg, n):
 
 def get_angle():
     buf = getnReg(ANGLE_H, 2)
-    return ((buf[0]<<8) | buf[1])/ 4096.0*360
+    return ((buf[0]<<8) | buf[1])/ (2**12)*360
 
 i2c = I2C(1,scl=Pin(15), sda=Pin(14))
 time.sleep(0.1)  # delay 1ms
