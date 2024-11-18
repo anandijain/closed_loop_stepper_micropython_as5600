@@ -115,10 +115,10 @@ while True:
     t = check_quadrant(c)
     err = t - set_point
     sleep(.01)
-    if abs(err) < 1: # jitter 
+    if abs(err) < 1.8: # jitter 
         time.sleep(0.01)
         print("AAAA: t: ", t, "err: ", err, "set: ", set_point, "p: ", p)
-
+        set_point = random.uniform(-1000, 1000)
         continue
     if err < 0: 
         yaw_dir.value(0)
